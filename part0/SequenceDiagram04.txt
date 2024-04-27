@@ -1,0 +1,30 @@
+title Notes Application Leonardo
+
+note over Browser:
+User saves a note
+end note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Server-->Browser: 302 - Redirect to /exampleapps/notes
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: notes.html
+
+note over Browser:
+HTML code requests for CSS and JS files
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+note over Browser:
+JS code requests notes data from JSON file
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [{"content":"text","date":"2024-04"}, ...]
+
+note over Browser:
+Browser renders the content of the notes
+end note
