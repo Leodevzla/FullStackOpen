@@ -1,0 +1,25 @@
+
+title Notes (First Load)
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: spa.html
+
+note over Browser:
+HTML code requests for CSS and JS files
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: spa.js
+
+note over Browser:
+JS code requests notes data from JSON file
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [{"content":"text","date":"2022-04"}, ...]
+
+note over Browser:
+JS file calls function to render the content of the notes
+end note
